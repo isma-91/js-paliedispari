@@ -12,13 +12,22 @@ console.log(compNum);
 const sum = userNum + compNum;
 const divisibility = isEven(sum);
 
+// if (
+//   (divisibility != 0 && userChoise == "dispari") ||
+//   (divisibility === 0 && userChoise == "pari")
+// ) {
+//   alert(sum + "Hai vinto");
+// } else {
+//   alert(sum + "Hai perso");
+// }
+
 if (
-  (divisibility != 0 && userChoise == "dispari") ||
-  (divisibility === 0 && userChoise == "pari")
+  (divisibility && userChoise === "pari") ||
+  (!divisibility && userChoise === "dispari")
 ) {
-  alert(sum + "Hai vinto");
+  alert(sum + " hai vinto");
 } else {
-  alert(sum + "Hai perso");
+  alert(sum + " hai perso");
 }
 
 function getRndNum(min, max) {
@@ -26,7 +35,7 @@ function getRndNum(min, max) {
 }
 
 function isEven(num) {
-  if (num % 2) {
+  if (num % 2 != 0) {
     return false;
   }
   return true;
